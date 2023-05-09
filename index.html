@@ -1,0 +1,72 @@
+<style>
+  input[type="text"] {
+    width: 300px;
+  }
+
+  td {
+    padding: 10px;
+    border: 0;
+  }
+</style>
+
+<h2>Simple Meander Inductor Generator (Meander Antenna)</h2>
+<form onsubmit="return false;">
+  <table id="calculator" style="align:center; margin:0 auto 1em !important; width:auto;">
+    <tr>
+      <td>DPI</td>
+      <td><input type="text" id="dpi" value="96" /></td>
+      <td>dpi</td>
+    </tr>
+    <tr>
+      <td>Image height</td>
+      <td><input type="text" id="img_height" value="50" /></td>
+      <td>mm</td>
+    </tr>
+    <tr>
+      <td>Image width</td>
+      <td><input type="text" id="img_width" value="100" /></td>
+      <td>mm</td>
+    </tr>
+    <tr>
+      <td>Turns</td>
+      <td><input type="text" id="turns" value="20" /></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Track height</td>
+      <td><input type="text" id="ant_height" value="30" /></td>
+      <td>
+        mm
+      </td>
+    </tr>
+    <tr>
+      <td>Track thickness</td>
+      <td><input type="text" id="cond_thickness" value="1" /></td>
+      <td>
+        mm
+      </td>
+    </tr>
+    <tr>
+      <td>Track spacing</td>
+      <td><input type="text" id="cond_spacing" value="1" /></td>
+      <td>
+        mm
+      </td>
+    </tr>
+    <!-- <tr>
+      <td>Calculated inductance</td>
+      <td>
+        <div id="ant_inductance" />
+      </td>
+      <td>µH</td>
+    </tr> -->
+    <tr>
+      <td><input type="submit" id="generate" onclick="draw()" colspan="3" /></td>
+    </tr>
+  </table>
+  <br /><br />
+  <br /><br />
+  <a id="downloadLnk" onclick="download()" href="antenna.png">Download PNG</a><br />
+  <canvas id="canvas" />
+</form>
+<script src="./script.js"></script>
