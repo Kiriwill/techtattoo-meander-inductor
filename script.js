@@ -2,9 +2,7 @@
 //Pixel = Centímetro * (DPI / 2,54)
 var c = document.getElementById('canvas');
 c.style.border = "1px solid";
-
 ctx = c.getContext("2d");
-ctx.fillStyle = "#0000000";
 
 //Posição do grafico
 var posX = 3
@@ -53,7 +51,8 @@ function draw() {
 	console.log("W = ", W)
 
 	document.getElementById('inductance').value = inductanceCalc(a, N, h, d, W)
-
+	
+	ctx.fillRect(0, highBasePosY, line_thick, line_thick)
 	for (i = 0; i < turns; i++) {
 		line(i)
 		i % 2 ? higherBase(i) : lowerBase(i)
